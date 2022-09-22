@@ -1,0 +1,4 @@
+批量转
+for %a in ("*.png") do ffmpeg -i "%a" "%~na.jpg"
+图片压缩
+ffmpeg -i dis6.webp -q 5 dis11.webp

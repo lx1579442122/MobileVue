@@ -1,0 +1,4 @@
+ffmpeg -i D:\video\奥特曼.mp4 -c:v libx264 -preset veryslow -crf 35 -c:a copy D:\video\dest2.mp4
+fmpeg -i input.mp4 -b:v 2000k -bufsize 2000k output.mp4
+视频裁剪
+ffmpeg -ss 00:10:00 -to 00:20:00 -accurate_seek -i input.mp4 -codec copy -avoid_negative_ts 1 -y output.mp4
