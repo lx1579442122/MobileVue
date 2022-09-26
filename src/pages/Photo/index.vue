@@ -1,6 +1,5 @@
 <template>
   <div>
-  
     <photo-rotate></photo-rotate>
     <photo-shutter></photo-shutter>
   </div>

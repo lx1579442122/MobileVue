@@ -73,11 +73,11 @@ export default {
   border-radius: 8px;
 }
 .bd {
-  position: absolute; 
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 95rem;
-  z-index: 9999;
+  z-index: 99;
 }
 .tp {
   padding-top: 3rem;
@@ -131,7 +131,36 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.bei span{
+.bei span {
   margin-left: 15px;
+}
+@media screen and (min-width: 300px) and (max-width: 450px) {
+  .tp {
+    margin-top: 2rem;
+    height: 34rem;
+  }
+  .bd{
+    z-index:0;
+  }
+  .footer {
+    width: 100vw;
+    height: 50rem;
+  }
+  .tp ul li {
+    border: 0;
+  }
+  .tp ul {
+    height: 30rem !important;
+    flex-direction: column-reverse;
+    height: 25rem;
+    border-left: 0;
+  }
+  .com span {
+    display: block !important;
+    width: 15rem !important;
+  }
+  .bei{
+    flex-direction: column;
+  }
 }
 </style>

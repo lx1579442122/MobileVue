@@ -98,7 +98,6 @@ export default {
   height: auto;
   position: relative;
   column-count: 4;
-  
 }
 .item {
   width: 250px;
@@ -109,14 +108,13 @@ export default {
   counter-increment: item-counter;
   overflow: hidden;
 }
-.item .picture{
+.item .picture {
   border: 2px solid salmon;
 }
 .item .picture img {
   display: block;
   width: 100%;
   height: 100%;
- 
 }
 .item::after {
   position: absolute;
@@ -154,28 +152,28 @@ export default {
   transition: all 0.5s;
 }
 .show:hover .picture {
- 
   transition: all 0.3s;
 }
 @media screen and (min-width: 300px) and (max-width: 450px) {
-    .container{
-        width: 100vw;
-        column-count: 1;
-    }
-    .item{
-        margin-left: 60px;
-    }
-    .cation{
-        top:82%;
-        right: 0;
-        width: 55px;
-    }
-    .cation a{
-        font-size: 12px;
-        width: 53px;
-    }
-    .background{
-        display: none;
-    }
+  .container {
+    width: 100%;
+    column-count: 1;
+  }
+  .item {
+    margin-left: 60px;
+  }
+  .cation {
+    top: 82%;
+    right: 0;
+    width: 55px;
+  }
+  .cation a {
+    font-size: 12px;
+    width: 53px;
+  }
+  .background {
+    display: none;
+  }
+  
 }
 </style>

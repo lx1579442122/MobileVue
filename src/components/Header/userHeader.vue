@@ -8,7 +8,8 @@
         /></router-link>
         <span>心悦</span>
       </div>
-      <div class="nav">
+      <button class="onNav" @click="click">{{ message }}</button>
+      <div class="nav" v-show="isShow">
         <ul id="nv">
           <li><router-link to="/home">首页</router-link></li>
           <li><router-link to="/music">音乐</router-link></li>
@@ -19,7 +20,7 @@
           <div class="hov"></div>
         </ul>
       </div>
-      <div class="search">
+      <div class="search" v-show="$route.meta.showNav">
         <input
           type="text"
           name="types"
@@ -44,6 +45,8 @@ export default {
   data() {
     return {
       keyword: "",
+      isShow: false,
+      message: "点击展开菜单",
     };
   },
   methods: {
@@ -53,6 +56,14 @@ export default {
         params: { keyword: this.keyword },
         query: { k: this.keyword.toUpperCase() },
       });
+    },
+    click() {
+      this.isShow = !this.isShow;
+      if (this.isShow) {
+        this.message = "点击关闭菜单";
+      } else {
+        this.message = "点击展开菜单";
+      }
     },
   },
 };
@@ -70,16 +81,18 @@ export default {
   font-style: normal;
   font-display: block;
 }
+
 .menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 9;
   animation: none 1s ease-in-out;
-  z-index: 999;
+  z-index: 9;
 }
 .hed {
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -111,7 +124,6 @@ export default {
 }
 .nav ul {
   position: absolute;
-
   position: relative;
   display: flex;
 }
@@ -225,5 +237,70 @@ export default {
 }
 .login span {
   color: white;
+}
+
+@media screen and (min-width: 300px) and (max-width: 450px) {
+  .onNav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    width: 90%;
+    border-radius: 5px;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    outline: none;
+    background-color: rgb(232, 92, 37);
+    border: 0;
+    z-index: 99999;
+  }
+  .nav {
+    padding: 10px;
+    background-color: rgb(235, 95, 43);
+    width: 100%;
+    position: fixed;
+    bottom: 6%;
+    left: 0;
+  }
+  .nav ul {
+    flex-wrap: wrap;
+  }
+  .nav ul li {
+    width: 30%;
+  }
+  
+  .search{
+    position: absolute;
+    top: 70px;
+    z-index: -1;
+  }
+  .search input {
+    width: 300px;
+    border: #49cc7d 1px solid;
+    
+  }
+  .logo img {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .logo span {
+    position: absolute;
+    left: 15px;
+    width: 60px;
+    font-size: 28px;
+  }
+  .login {
+    position: absolute;
+    right: 0;
+    width: 7rem;
+  }
+  .hed{
+    justify-content: center;
+  }
 }
 </style>

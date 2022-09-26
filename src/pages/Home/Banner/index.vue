@@ -33,15 +33,28 @@ export default {
 <style scoped>
 div {
   width: 100%;
-  margin: 0 auto;
+  margin: 4rem auto;
 }
 .slider {
-  height: 600px !important;
+  height: 600px;
 }
 div img {
   border-radius: 5px;
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+@media screen and (min-width: 300px) and (max-width: 450px) {
+  .slider {
+    height: 200;
+  }
+  div{
+    margin-top: 3.5rem;
+    margin-bottom: 0;
+    height: 80%;
+  }
+  div img{
+    height: 80%;
+  }
 }
 </style>

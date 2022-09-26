@@ -40,57 +40,57 @@ export default new VueRouter({
     {
       path: "/home",
       component: Home,
-      meta: { show: true }, 
+      meta: { show: true, showNav:true }, 
     },
     
     {
       path: "/register",
       component: () => import
       (/* webpackChunkName: "Register" */ '@/pages/Register'),
-      meta: { show: false },
+      meta: { show: false , showNav:false },
     },
     {
       path: "/message",
       component: () => import
       (/* webpackChunkName: "Message" */ '@/pages/Message'),
-      meta: { show: false },
+      meta: { show: false , showNav:false },
     },
     {
       path: "/user",
       component: () => import
       (/* webpackChunkName: "User" */ '@/pages/User'),
-      meta: { show: true },
+      meta: { show: true , showNav:false },
     },
 
     {
       path: "/blog",
       component: () => import
       (/* webpackChunkName: "Blog" */ '@/pages/Blog'),
-      meta: { show: false },
+      meta: { show: false , showNav:false },
     },
     {
       path: "/music",
       component: () => import
       (/* webpackChunkName: "Music" */ '@/pages/Music'),
-      meta: { show: false },
+      meta: { show: false , showNav:false },
     },
     {
       path: "/photo",
       component: () => import
       (/* webpackChunkName: "Photo" */ '@/pages/Photo'),
-      meta: { show: false },
+      meta: { show: false , showNav:false },
     },
     {
       path: "/video",
       component: () => import
       (/* webpackChunkName: "Video" */ '@/pages/Video'),
-      meta: { show: false },
+      meta: { show: false , showNav:false },
     },
     {
       path: "/search/:keyword",
       component: () => import
       (/* webpackChunkName: "Search" */ '@/pages/Search'),
-      meta: { show: true },
+      meta: { show: true , showNav:true },
       name: "search",
     },
     {

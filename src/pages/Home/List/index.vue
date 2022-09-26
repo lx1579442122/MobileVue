@@ -623,11 +623,26 @@ export default {
     flex-direction: column-reverse;
   }
   .con{
-   
     grid-template-columns: repeat(1,1fr);
   }
   .rt{
     width: 100%;
+  }
+  .con > div{
+    border-radius: 5px;
+  }
+  .con > div div:first-child{
+    
+    width: 340px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .con > div div:first-child img{
+    border-radius: 5px;
+  }
+  .con > div div:last-child{
+    width: 100%;
+    justify-content: center;
   }
   
 }

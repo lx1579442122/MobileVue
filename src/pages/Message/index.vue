@@ -275,9 +275,7 @@ button {
     margin: 10px 0;
   }
   .flex {
-    height: 500px;
-    margin-top: 40px;
-    margin-left: 60px;
+    height: 750px;
     flex-direction: column;
   }
   .lf,
@@ -285,7 +283,9 @@ button {
     height: 300px;
     width: 130%;
     margin: 15px 0;
+    
   }
+  
   .login,
   .password {
     width: 100%;

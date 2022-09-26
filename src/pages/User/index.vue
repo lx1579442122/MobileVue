@@ -342,10 +342,12 @@ video {
   .con {
     height: 38rem;
   }
+  .item{
+    margin: 0 auto;
+  }
   h1 {
-    width: 20rem;
+    width: 100%!important;
     word-break: break-all;
-    margin-left: 4rem !important;
     font-size: 15px;
     clear: both;
   }
@@ -358,14 +360,15 @@ video {
     width: 100vw;
   }
   .container {
-    width: 60vw;
+    margin: 0 auto;
+    width: 100%;
     column-count: 1;
   }
   .vid {
     width: 100vw;
   }
   .flex {
-    margin-left: 60px;
+    
     height: 460px;
   }
 }
