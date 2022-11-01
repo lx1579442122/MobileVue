@@ -1,5 +1,329 @@
 <template>
-  <div class="xinYue"></div>
+  <div class="xinYue">
+    <div class="video">
+      <div class="m">
+        <div class="p">
+          <h2>最新歌曲</h2>
+        </div>
+        <div class="item">
+          <div class="left">
+            <video
+              class="lazy"
+              width="250"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              onMouseOver="this.play()"
+              onMouseOut="this.pause()"
+              poster="@/assets/images/load.webp"
+            >
+              <source
+                src="@/assets/video/1.mp4"
+                preload="none"
+                poster="占位图"
+                type="video/mp4"
+              />
+              您的浏览器不支持 video 标签。
+            </video>
+          </div>
+          <div class="grid">
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/2.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/1.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/3.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/2.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/3.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/1.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m">
+        <div class="p">
+          <h2>最新歌曲</h2>
+        </div>
+        <div class="item">
+          <div class="left">
+            <video
+              class="lazy"
+              width="250"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              onMouseOver="this.play()"
+              onMouseOut="this.pause()"
+              poster="@/assets/images/load.webp"
+            >
+              <source
+                src="@/assets/video/3.mp4"
+                preload="none"
+                poster="占位图"
+                type="video/mp4"
+              />
+              您的浏览器不支持 video 标签。
+            </video>
+          </div>
+          <div class="grid">
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/3.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/2.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/1.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/1.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source
+                  src="@/assets/video/3.mp4"
+                  preload="none"
+                  poster="占位图"
+                  type="video/mp4"
+                />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+            <div class="vd">
+              <video
+                class="lazy"
+                width="250"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                onMouseOver="this.play()"
+                onMouseOut="this.pause()"
+                poster="@/assets/images/load.webp"
+              >
+                <source src="@/assets/video/3.mp4" type="video/mp4" />
+                您的浏览器不支持 video 标签。
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -10,7 +334,6 @@ import bnr4 from "@/assets/images/4.webp";
 import bnr5 from "@/assets/images/21.jpg";
 import bnr6 from "@/assets/images/6.webp";
 export default {
-
   name: "userVideo",
   data() {
     return {
@@ -25,9 +348,9 @@ export default {
 </script>
 
 <style scoped>
-  .xinYue{
-    margin-top: 4.5rem;
-  }
+.xinYue {
+  margin-top: 4.5rem;
+}
 video {
   object-fit: fill !important;
   border-radius: 5px;
@@ -41,7 +364,7 @@ video {
   width: 15rem;
   height: 4rem;
 }
-.p span{
+.p span {
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -74,8 +397,11 @@ video {
   height: 100%;
 }
 @media screen and (min-width: 300px) and (max-width: 450px) {
+  .video {
+    width: 100%;
+  }
   .item {
-    width: 23rem;
+    width: 100%;
     flex-direction: column;
   }
   .grid {
@@ -83,12 +409,21 @@ video {
     grid-template-columns: repeat(1, 1fr);
   }
   .vd video {
+    margin: 15px 0;
     width: 95%;
-    margin-left: 20px;
+  }
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .left video {
-    width: 80%;
-    margin-left: 57px;
+    margin: 15px 0;
+    width: 90%;
+  }
+  h2{
+    margin-top: 25px;
+    font-size: 1rem;
   }
 }
 </style>

@@ -3,37 +3,11 @@
     <div class="recommend">最新推荐</div>
     <div class="new w margin">
       <ul id="block">
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
+        <li v-for="(item, index) in newDataTitle" :key="index">
+          <div>
+            <router-link to="/blog">{{ item }}</router-link>
+          </div>
           <img loading="lazy" src="./images/dis1.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis2.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis3.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis4.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis5.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis6.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis7.webp" />
-        </li>
-        <li>
-          <div><router-link to="/blog">xinyue</router-link></div>
-          <img loading="lazy" src="./images/dis8.webp" />
         </li>
       </ul>
     </div>
@@ -41,8 +15,30 @@
 </template>
 
 <script>
+// import request from "../../../network/request"
 export default {
   name: "homeRecommend",
+  data() {
+    return {
+      newDataTitle: [],
+      recommend: [],
+    };
+  },
+  method: {
+   
+  },
+  mounted() {
+    this.$axios({
+      url: "https://www.hartmore.xyz/php/newRecommend.php",
+      method: "get",
+      params: {},
+    }).then((response) => {
+      this.newDataTitle = response.data.split(",");
+      console.log(this.newDataTitle);
+      
+      
+    });
+  },
 };
 </script>
 
@@ -95,17 +91,14 @@ export default {
   box-shadow: 10px 5px 5px black;
 }
 @media screen and (min-width: 300px) and (max-width: 450px) {
-  .recommend{
+  .recommend {
     width: 70%;
   }
-  .new{
+  .new {
     width: 100%;
   }
-  .new ul{
+  .new ul {
     grid-template-columns: 1fr;
   }
- 
-  
 }
-
 </style>

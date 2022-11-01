@@ -606,7 +606,7 @@ export default {
 }
 @media screen and (min-width: 300px) and (max-width: 450px) {
   .com{
-    width: 100%;
+    width: 80%;
   }
   .w,
   .lf
@@ -623,7 +623,12 @@ export default {
     flex-direction: column-reverse;
   }
   .con{
+    width: 95%;
     grid-template-columns: repeat(1,1fr);
+    gap: 10px 0;
+  }
+  .title{
+    width: 110%;
   }
   .rt{
     width: 100%;
@@ -632,12 +637,13 @@ export default {
     border-radius: 5px;
   }
   .con > div div:first-child{
-    
-    width: 340px;
+    width: 196px;
     padding: 10px;
-    margin: 0 auto;
+    
   }
   .con > div div:first-child img{
+    width: 100%;
+    height: 260px;
     border-radius: 5px;
   }
   .con > div div:last-child{

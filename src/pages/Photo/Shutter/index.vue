@@ -158,10 +158,11 @@ export default {
   .container {
     width: 100%;
     column-count: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .item {
-    margin-left: 60px;
-  }
+
   .cation {
     top: 82%;
     right: 0;

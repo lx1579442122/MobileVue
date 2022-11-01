@@ -263,7 +263,6 @@ button {
     width: 18rem;
   }
   .message-show {
-    margin-left: 30px;
     width: 17rem;
   }
   .wrapper {

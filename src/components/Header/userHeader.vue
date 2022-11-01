@@ -8,15 +8,15 @@
         /></router-link>
         <span>心悦</span>
       </div>
-      <button class="onNav" @click="click">{{ message }}</button>
+      <button class="onNav" @click="click"><i class="iconfont icon-daohang1"></i></button>
       <div class="nav" v-show="isShow">
         <ul id="nv">
-          <li><router-link to="/home">首页</router-link></li>
-          <li><router-link to="/music">音乐</router-link></li>
-          <li><router-link to="/photo">图片</router-link></li>
-          <li><router-link to="/message">留言</router-link></li>
-          <li><router-link to="/user">关于</router-link></li>
-          <li><router-link to="/video">视频</router-link></li>
+          <li><i class="iconfont icon-shouye"></i><router-link to="/home">首页</router-link></li>
+          <li><i class="iconfont icon-yinle"></i><router-link to="/music">音乐</router-link></li>
+          <li><i class="iconfont icon-xiangce"></i><router-link to="/photo">图片</router-link></li>
+          <li><i class="iconfont icon-liuyan"></i><router-link to="/message">留言</router-link></li>
+          <li><i class="iconfont icon-wode"></i><router-link to="/user">关于</router-link></li>
+          <li><i class="iconfont icon-shipin"></i><router-link to="/video">视频</router-link></li>
           <div class="hov"></div>
         </ul>
       </div>
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+
 export default {
   name: "userHeader",
   data() {
@@ -70,17 +71,6 @@ export default {
 </script>
 
 <style scoped>
-@font-face {
-  font-family: "icomoon";
-  src: url("./fonts/icomoon.eot?wrez6j");
-  src: url("./fonts/icomoon.eot?wrez6j#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?wrez6j") format("truetype"),
-    url("./fonts/icomoon.woff?wrez6j") format("woff"),
-    url("./fonts/icomoon.svg?wrez6j#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
 
 .menu {
   position: fixed;
@@ -89,7 +79,7 @@ export default {
   width: 100%;
   z-index: 9;
   animation: none 1s ease-in-out;
-  z-index: 9;
+  z-index: 9999;
 }
 .hed {
   width: 100%;
@@ -137,6 +127,10 @@ export default {
   font-weight: 700;
   z-index: 10;
 }
+.nav ul li i{
+  color: orange;
+  font-size: 1.5rem;
+}
 .hov {
   position: absolute;
   width: 6rem;
@@ -144,7 +138,7 @@ export default {
   left: 0;
   top: 0;
   transition: all 0.5s;
-  background-color: orange;
+  background-color: rgb(69, 104, 67);
   border-radius: 25px 10px 25px 10px;
   z-index: 5;
 }
@@ -154,24 +148,7 @@ export default {
   font-family: "icomoon";
   color: rgb(108, 218, 163);
 }
-.nav ul li:nth-child(1)::before {
-  content: "";
-}
-.nav ul li:nth-child(2)::before {
-  content: "";
-}
-.nav ul li:nth-child(3)::before {
-  content: "";
-}
-.nav ul li:nth-child(4)::before {
-  content: "";
-}
-.nav ul li:nth-child(5)::before {
-  content: "";
-}
-.nav ul li:nth-child(6)::before {
-  content: "";
-}
+
 .nav ul li a {
   font-family: "宋体";
   font-weight: 700;
@@ -243,11 +220,10 @@ export default {
   .onNav {
     display: block;
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 8px;
+    left: 10px;
     z-index: 9;
-    width: 90%;
+    width: 3rem;
     border-radius: 5px;
     height: 3rem;
     font-size: 1rem;
@@ -256,20 +232,35 @@ export default {
     background-color: rgb(232, 92, 37);
     border: 0;
     z-index: 99999;
+    border: #114827 2px solid;
   }
   .nav {
     padding: 10px;
-    background-color: rgb(235, 95, 43);
-    width: 100%;
+    background-color: rgba(10, 87, 113, 0.948);
+    width: 60%;
+    height: 100%;
     position: fixed;
-    bottom: 6%;
+    top: 0;
     left: 0;
   }
   .nav ul {
-    flex-wrap: wrap;
+    margin-top: 30px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hov{
+    width: 150px;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
   }
   .nav ul li {
-    width: 30%;
+    height: 15%;
+    width: 100%;
+    letter-spacing: 10px;
+    font-size: 1.5rem;
   }
   
   .search{
@@ -290,7 +281,7 @@ export default {
   }
   .logo span {
     position: absolute;
-    left: 15px;
+    left: 65px;
     width: 60px;
     font-size: 28px;
   }

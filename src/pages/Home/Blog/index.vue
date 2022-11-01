@@ -14,9 +14,11 @@
             <div class="bt-like">
               <ul>
                 <li>
+                  <i class="iconfont icon-dianzan"></i>
                   <a>8 </a>
                 </li>
                 <li>
+                  <i class="iconfont icon-a-xingxingkong"></i>
                   <a> 10</a>
                 </li>
               </ul>
@@ -28,13 +30,16 @@
             </div>
             <div class="fl">
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">点赞</a>
+                <i class="iconfont icon-dianzan"></i>
+                <a>点赞</a>
               </div>
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">收藏</a>
+                <i class="iconfont icon-a-xingxingkong"></i>
+                <a>收藏</a>
               </div>
               <div class="like last">
-                <a href="blog.php?id=' . $rows['id'] . ' ">关注</a>
+                <i class="iconfont icon-xihuan"></i>
+                <a>关注</a>
               </div>
             </div>
           </div>
@@ -51,9 +56,11 @@
             <div class="bt-like">
               <ul>
                 <li>
+                  <i class="iconfont icon-dianzan"></i>
                   <a>8 </a>
                 </li>
                 <li>
+                  <i class="iconfont icon-a-xingxingkong"></i>
                   <a> 10</a>
                 </li>
               </ul>
@@ -65,13 +72,16 @@
             </div>
             <div class="fl">
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">点赞</a>
+                <i class="iconfont icon-dianzan"></i>
+                <a>点赞</a>
               </div>
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">收藏</a>
+                <i class="iconfont icon-a-xingxingkong"></i>
+                <a>收藏</a>
               </div>
               <div class="like last">
-                <a href="blog.php?id=' . $rows['id'] . ' ">关注</a>
+                <i class="iconfont icon-xihuan"></i>
+                <a>关注</a>
               </div>
             </div>
           </div>
@@ -88,9 +98,11 @@
             <div class="bt-like">
               <ul>
                 <li>
+                  <i class="iconfont icon-dianzan"></i>
                   <a>8 </a>
                 </li>
                 <li>
+                  <i class="iconfont icon-a-xingxingkong"></i>
                   <a> 10</a>
                 </li>
               </ul>
@@ -102,13 +114,16 @@
             </div>
             <div class="fl">
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">点赞</a>
+                <i class="iconfont icon-dianzan"></i>
+                <a>点赞</a>
               </div>
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">收藏</a>
+                <i class="iconfont icon-a-xingxingkong"></i>
+                <a>收藏</a>
               </div>
               <div class="like last">
-                <a href="blog.php?id=' . $rows['id'] . ' ">关注</a>
+                <i class="iconfont icon-xihuan"></i>
+                <a>关注</a>
               </div>
             </div>
           </div>
@@ -125,9 +140,11 @@
             <div class="bt-like">
               <ul>
                 <li>
+                  <i class="iconfont icon-dianzan"></i>
                   <a>8 </a>
                 </li>
                 <li>
+                  <i class="iconfont icon-a-xingxingkong"></i>
                   <a> 10</a>
                 </li>
               </ul>
@@ -139,13 +156,16 @@
             </div>
             <div class="fl">
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">点赞</a>
+                <i class="iconfont icon-dianzan"></i>
+                <a>点赞</a>
               </div>
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">收藏</a>
+                <i class="iconfont icon-a-xingxingkong"></i>
+                <a>收藏</a>
               </div>
               <div class="like last">
-                <a href="blog.php?id=' . $rows['id'] . ' ">关注</a>
+                <i class="iconfont icon-xihuan"></i>
+                <a>关注</a>
               </div>
             </div>
           </div>
@@ -162,9 +182,11 @@
             <div class="bt-like">
               <ul>
                 <li>
+                  <i class="iconfont icon-dianzan"></i>
                   <a>8 </a>
                 </li>
                 <li>
+                  <i class="iconfont icon-a-xingxingkong"></i>
                   <a> 10</a>
                 </li>
               </ul>
@@ -176,13 +198,16 @@
             </div>
             <div class="fl">
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">点赞</a>
+                <i class="iconfont icon-dianzan"></i>
+                <a>点赞</a>
               </div>
               <div class="like">
-                <a href="blog.php?id=' . $rows['id'] . ' ">收藏</a>
+                <i class="iconfont icon-a-xingxingkong"></i>
+                <a>收藏</a>
               </div>
               <div class="like last">
-                <a href="blog.php?id=' . $rows['id'] . ' ">关注</a>
+                <i class="iconfont icon-xihuan"></i>
+                <a>关注</a>
               </div>
             </div>
           </div>
@@ -436,7 +461,7 @@ a {
   justify-content: center;
   padding: 15px;
   margin-top: 2rem;
-  
+
   /* background-color: rgba(103, 147, 117, 0.817); */
   border: 1px solid orange;
   border-bottom: 3px solid rgba(11, 119, 30, 0.839);
@@ -501,24 +526,7 @@ a {
 .bt-like ul :nth-child(1) a {
   color: black;
 }
-.bt-like ul li a::before {
-  font-family: "icomoon";
-  color: rgb(0, 0, 0);
-  font-size: 16px;
-  padding-right: 2px;
-}
-.bt-like ul li:nth-child(1) a::before {
-  content: "";
-}
-.bt-like ul li:nth-child(2) a::before {
-  content: "";
-}
-.bt-like ul :nth-child(2) {
-  padding-top: 2px;
-}
-.bt-like ul :nth-child(2) a {
-  color: black;
-}
+
 .like {
   width: 27.5%;
   height: 1.5rem;
@@ -543,12 +551,10 @@ a {
 .like:hover a {
   color: white;
 }
-.like a::before {
-  font-family: "icomoon";
-  content: "";
+.like i {
+  margin-left: 12px;
   color: rgb(221, 17, 17);
   font-size: 1rem;
-  margin: 0 5px;
 }
 .item {
   position: relative;
@@ -571,29 +577,28 @@ a {
   color: white;
 }
 @media screen and (min-width: 300px) and (max-width: 450px) {
-  .con{
+  .con {
     width: 100%;
   }
-  .blog-item{
-    flex-direction:column-reverse;
+  .blog-item {
+    flex-direction: column-reverse;
     height: 430px;
   }
-  .zhan{
+  .zhan {
     top: 99.87%;
   }
-  .rt{
+  .rt {
     width: 99%;
   }
-  .rightCard{
+  .rightCard {
     margin-top: 2rem;
     width: 100%;
   }
-  .bt-like{
+  .bt-like {
     height: 6px;
   }
-  .blog{
+  .blog {
     flex-direction: column;
   }
- 
 }
 </style>
