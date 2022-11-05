@@ -2,199 +2,41 @@
   <div class="con">
     <div class="blog">
       <div class="item">
-        <div class="blog-item">
+        <div
+          class="blog-item"
+          v-for="item of newData.slice(0, show)"
+          :key="item.id"
+        >
           <div class="lf">
-            <h2></h2>
+            <h2>{{ item.title }}</h2>
             <div class="ell">
-              <router-link to="/blog" class="sp">
-                这是第一次采用Vue框架去搭建的一个静态站点,也是第一次尝试到,框架的魅力,大大的提高了代码的可复用性
-                ,希望能够在这条路上走得再远一些!
-              </router-link>
+              <a
+                class="sp"
+                @click="blogs(item.id)"
+                v-dompurify-html="item.text"
+              >
+                {{ item.text }}
+              </a>
             </div>
             <div class="bt-like">
               <ul>
                 <li>
                   <i class="iconfont icon-dianzan"></i>
-                  <a>8 </a>
+                  <a>{{ item.good_num }}</a>
                 </li>
                 <li>
                   <i class="iconfont icon-a-xingxingkong"></i>
-                  <a> 10</a>
+                  <a> {{ item.types }}</a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="rt">
             <div>
-              <img src="../Recommend/images/dis2.webp" />
-            </div>
-            <div class="fl">
-              <div class="like">
-                <i class="iconfont icon-dianzan"></i>
-                <a>点赞</a>
-              </div>
-              <div class="like">
-                <i class="iconfont icon-a-xingxingkong"></i>
-                <a>收藏</a>
-              </div>
-              <div class="like last">
-                <i class="iconfont icon-xihuan"></i>
-                <a>关注</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="blog-item">
-          <div class="lf">
-            <h2></h2>
-            <div class="ell">
-              <router-link to="/blog" class="sp">
-                这是第一次采用Vue框架去搭建的一个静态站点,也是第一次尝试到,框架的魅力,大大的提高了代码的可复用性
-                ,希望能够在这条路上走得再远一些!
-              </router-link>
-            </div>
-            <div class="bt-like">
-              <ul>
-                <li>
-                  <i class="iconfont icon-dianzan"></i>
-                  <a>8 </a>
-                </li>
-                <li>
-                  <i class="iconfont icon-a-xingxingkong"></i>
-                  <a> 10</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="rt">
-            <div>
-              <img src="../Recommend/images/dis2.webp" />
-            </div>
-            <div class="fl">
-              <div class="like">
-                <i class="iconfont icon-dianzan"></i>
-                <a>点赞</a>
-              </div>
-              <div class="like">
-                <i class="iconfont icon-a-xingxingkong"></i>
-                <a>收藏</a>
-              </div>
-              <div class="like last">
-                <i class="iconfont icon-xihuan"></i>
-                <a>关注</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="blog-item">
-          <div class="lf">
-            <h2></h2>
-            <div class="ell">
-              <router-link to="/blog" class="sp">
-                这是第一次采用Vue框架去搭建的一个静态站点,也是第一次尝试到,框架的魅力,大大的提高了代码的可复用性
-                ,希望能够在这条路上走得再远一些!
-              </router-link>
-            </div>
-            <div class="bt-like">
-              <ul>
-                <li>
-                  <i class="iconfont icon-dianzan"></i>
-                  <a>8 </a>
-                </li>
-                <li>
-                  <i class="iconfont icon-a-xingxingkong"></i>
-                  <a> 10</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="rt">
-            <div>
-              <img src="../Recommend/images/dis2.webp" />
-            </div>
-            <div class="fl">
-              <div class="like">
-                <i class="iconfont icon-dianzan"></i>
-                <a>点赞</a>
-              </div>
-              <div class="like">
-                <i class="iconfont icon-a-xingxingkong"></i>
-                <a>收藏</a>
-              </div>
-              <div class="like last">
-                <i class="iconfont icon-xihuan"></i>
-                <a>关注</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="blog-item">
-          <div class="lf">
-            <h2></h2>
-            <div class="ell">
-              <router-link to="/blog" class="sp">
-                这是第一次采用Vue框架去搭建的一个静态站点,也是第一次尝试到,框架的魅力,大大的提高了代码的可复用性
-                ,希望能够在这条路上走得再远一些!
-              </router-link>
-            </div>
-            <div class="bt-like">
-              <ul>
-                <li>
-                  <i class="iconfont icon-dianzan"></i>
-                  <a>8 </a>
-                </li>
-                <li>
-                  <i class="iconfont icon-a-xingxingkong"></i>
-                  <a> 10</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="rt">
-            <div>
-              <img src="../Recommend/images/dis2.webp" />
-            </div>
-            <div class="fl">
-              <div class="like">
-                <i class="iconfont icon-dianzan"></i>
-                <a>点赞</a>
-              </div>
-              <div class="like">
-                <i class="iconfont icon-a-xingxingkong"></i>
-                <a>收藏</a>
-              </div>
-              <div class="like last">
-                <i class="iconfont icon-xihuan"></i>
-                <a>关注</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="blog-item">
-          <div class="lf">
-            <h2></h2>
-            <div class="ell">
-              <router-link to="/blog" class="sp">
-                这是第一次采用Vue框架去搭建的一个静态站点,也是第一次尝试到,框架的魅力,大大的提高了代码的可复用性
-                ,希望能够在这条路上走得再远一些!
-              </router-link>
-            </div>
-            <div class="bt-like">
-              <ul>
-                <li>
-                  <i class="iconfont icon-dianzan"></i>
-                  <a>8 </a>
-                </li>
-                <li>
-                  <i class="iconfont icon-a-xingxingkong"></i>
-                  <a> 10</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="rt">
-            <div>
-              <img src="../Recommend/images/dis2.webp" />
+              <img
+                :src="'https://www.hartmore.xyz/admin/' + item.picture"
+                @click="blogs(item.id)"
+              />
             </div>
             <div class="fl">
               <div class="like">
@@ -214,7 +56,8 @@
         </div>
         <div class="zhan">
           <div class="kai">
-            <a href="blog_show.php">查看更多</a>
+            <a @click="blogShow" v-show="isShow">查看更多</a>
+            <a v-show="is_Show" @click="blog">没有了/收起</a>
           </div>
         </div>
       </div>
@@ -322,11 +165,54 @@
 <script>
 export default {
   name: "homeBlog",
+  data() {
+    return {
+      isShow: true,
+      is_Show: false,
+      show: 5,
+      index: 0,
+      newData: [],
+    };
+  },
+  methods: {
+    blogShow() {
+      this.show += 1;
+      if (this.show < this.newData.length) {
+        this.show += 4;
+      } else if (this.show > this.newData.length) {
+        this.isShow = !this.isShow;
+        this.is_Show = !this.is_Show;
+      }
+    },
+    blog() {
+      this.show = 5;
+      this.isShow = !this.isShow;
+      this.is_Show = !this.is_Show;
+    },
+    blogs(item) {
+      this.$router.push({
+        path: "/blog",
+        query: {
+          id: this.$base64.encode(item),
+        },
+      });
+    },
+  },
+  mounted() {
+    this.$axios({
+      url: "https://www.hartmore.xyz/php/indexBlog.php",
+      method: "POST",
+      params: {},
+    }).then((response) => {
+      this.newData = response.data;
+    });
+  },
 };
 </script>
 
 <style scoped>
 a {
+  cursor: pointer;
   color: rgb(0, 0, 0);
 }
 
@@ -477,24 +363,34 @@ a {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
 }
 .blog-item .lf h2 {
-  padding-bottom: 7px;
-  margin-left: -15px;
+  font-size: 1.3rem;
 }
 .blog-item .lf a {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .rt {
   width: 40%;
 }
+.rt > div:first-child{
+  width: 310px;
+  height: 150px;
+}
 .blog-item .rt img {
+  cursor: pointer;
   object-fit: cover;
   border-radius: 5px;
-  width: 310px;
-  height: 170px;
+  width: 100%;
+  height: 100%;
 }
+.blog-item .rt > div:first-child:hover {
+  
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+
 .rt > div {
   overflow: hidden;
 }
@@ -520,7 +416,7 @@ a {
   border: 0;
 }
 .lf .bt-like ul {
-  width: 9rem;
+  width: 13rem;
   display: flex;
 }
 .bt-like ul :nth-child(1) a {
@@ -558,6 +454,7 @@ a {
 }
 .item {
   position: relative;
+  height: 100%;
 }
 .zhan {
   position: absolute;
@@ -565,7 +462,7 @@ a {
   text-align: center;
   line-height: 30px;
   font-size: 20px;
-  top: 98.35%;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgb(252, 125, 125);
@@ -574,6 +471,7 @@ a {
   z-index: 9;
 }
 .zhan a {
+  cursor: pointer;
   color: white;
 }
 @media screen and (min-width: 300px) and (max-width: 450px) {
@@ -584,9 +482,7 @@ a {
     flex-direction: column-reverse;
     height: 430px;
   }
-  .zhan {
-    top: 99.87%;
-  }
+
   .rt {
     width: 99%;
   }

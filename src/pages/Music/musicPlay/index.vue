@@ -560,15 +560,12 @@ export default {
 }
 
 @media screen and (min-width: 300px) and (max-width: 450px) {
-  .w {
-    height: 52rem;
-  }
+ 
   .iconfont {
     font-size: 1.5rem;
   }
   .photo {
     margin-left: 0;
-    margin-top: 7rem;
     width: 20rem;
     height: 38rem;
     .main {

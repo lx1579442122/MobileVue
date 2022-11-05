@@ -95,10 +95,10 @@ export default new VueRouter({
       meta: { show: false, showNav: false },
     },
     {
-      path: "/search/:keyword",
+      path: "/search",
       component: () =>
         import(/* webpackChunkName: "Search" */ "@/pages/Search"),
-      meta: { show: true, showNav: true },
+      meta: { show: true, showNav: false },
       name: "search",
     },
     {

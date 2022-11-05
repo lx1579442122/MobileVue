@@ -8,15 +8,35 @@
         /></router-link>
         <span>心悦</span>
       </div>
-      <button class="onNav" @click="click"><i class="iconfont icon-daohang1"></i></button>
+      <button class="onNav" @click="click">
+        <i class="iconfont icon-daohang1"></i><span>导航</span>
+      </button>
       <div class="nav" v-show="isShow">
         <ul id="nv">
-          <li><i class="iconfont icon-shouye"></i><router-link to="/home">首页</router-link></li>
-          <li><i class="iconfont icon-yinle"></i><router-link to="/music">音乐</router-link></li>
-          <li><i class="iconfont icon-xiangce"></i><router-link to="/photo">图片</router-link></li>
-          <li><i class="iconfont icon-liuyan"></i><router-link to="/message">留言</router-link></li>
-          <li><i class="iconfont icon-wode"></i><router-link to="/user">关于</router-link></li>
-          <li><i class="iconfont icon-shipin"></i><router-link to="/video">视频</router-link></li>
+          <li>
+            <i class="iconfont icon-shouye"></i
+            ><router-link to="/home">首页</router-link>
+          </li>
+          <li>
+            <i class="iconfont icon-yinle"></i
+            ><router-link to="/music">音乐</router-link>
+          </li>
+          <li>
+            <i class="iconfont icon-xiangce"></i
+            ><router-link to="/photo">图片</router-link>
+          </li>
+          <li>
+            <i class="iconfont icon-liuyan"></i
+            ><router-link to="/message">留言</router-link>
+          </li>
+          <li>
+            <i class="iconfont icon-wode"></i
+            ><router-link to="/user">关于</router-link>
+          </li>
+          <li>
+            <i class="iconfont icon-shipin"></i
+            ><router-link to="/video">视频</router-link>
+          </li>
           <div class="hov"></div>
         </ul>
       </div>
@@ -26,6 +46,9 @@
           name="types"
           placeholder="搜索···"
           v-model="keyword"
+          @blur="blur"
+          ref="sea"
+          @keyup.enter="goSearch"
         />
         <button @click="goSearch">搜索</button>
       </div>
@@ -41,6 +64,7 @@
 
 <script>
 
+
 export default {
   name: "userHeader",
   data() {
@@ -48,6 +72,7 @@ export default {
       keyword: "",
       isShow: false,
       message: "点击展开菜单",
+      
     };
   },
   methods: {
@@ -57,6 +82,17 @@ export default {
         params: { keyword: this.keyword },
         query: { k: this.keyword.toUpperCase() },
       });
+      // if(this.keywords !== ''){
+      //   let val = this.keywords.trim()
+      //   if(!val){
+      //     return
+      //   }
+      //   if(this.search.indexOf(val) === -1){
+      //     this.search.unshift(val)
+      //     this.search = this.search.slice(0,10)
+      //     localStorage.setItem('history',JSON.stringify(this.search))
+      //   }
+      // }
     },
     click() {
       this.isShow = !this.isShow;
@@ -66,12 +102,14 @@ export default {
         this.message = "点击展开菜单";
       }
     },
+    blur(){
+      this.$refs.sea.value = ''
+    },
   },
 };
 </script>
 
 <style scoped>
-
 .menu {
   position: fixed;
   top: 0;
@@ -107,10 +145,23 @@ export default {
   width: 7rem;
   height: 7rem;
 }
-
+.onNav {
+  padding: 5px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgb(208, 218, 234);
+  border-radius: 5px;
+  position: fixed;
+  left: 200px;
+  top: 14px;
+  color: white;
+}
+.onNav span {
+  margin: 0 5px;
+}
 .nav {
   animation: block 0.5s ease-in-out;
-  width: 45rem;
+  width: 35rem;
 }
 .nav ul {
   position: absolute;
@@ -127,7 +178,7 @@ export default {
   font-weight: 700;
   z-index: 10;
 }
-.nav ul li i{
+.nav ul li i {
   color: orange;
   font-size: 1.5rem;
 }
@@ -234,6 +285,9 @@ export default {
     z-index: 99999;
     border: #114827 2px solid;
   }
+  .onNav span {
+    display: none;
+  }
   .nav {
     padding: 10px;
     background-color: rgba(10, 87, 113, 0.948);
@@ -250,7 +304,7 @@ export default {
     justify-content: center;
     align-items: center;
   }
-  .hov{
+  .hov {
     width: 150px;
     left: 50%;
     top: 40px;
@@ -262,8 +316,8 @@ export default {
     letter-spacing: 10px;
     font-size: 1.5rem;
   }
-  
-  .search{
+
+  .search {
     position: absolute;
     top: 70px;
     z-index: -1;
@@ -271,7 +325,6 @@ export default {
   .search input {
     width: 300px;
     border: #49cc7d 1px solid;
-    
   }
   .logo img {
     width: 4rem;
@@ -290,7 +343,7 @@ export default {
     right: 0;
     width: 7rem;
   }
-  .hed{
+  .hed {
     justify-content: center;
   }
 }

@@ -258,7 +258,7 @@ $bold: 700 !default;
           width: 30px;
           height: 30px;
           top: 28px;
-          right: 0;
+          right: 35px;
           img {
             margin-top: 6px;
             line-height: 30px;
@@ -390,7 +390,7 @@ $bold: 700 !default;
 @media screen and (min-width: 300px) and (max-width: 450px) {
   .container {
     width: 90% !important;
-    height: 600px !important;
+    height: 400px !important;
   }
   .sign-box {
     width: 100%;

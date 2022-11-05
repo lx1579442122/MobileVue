@@ -5,9 +5,11 @@
       <ul id="block">
         <li v-for="(item, index) in newDataTitle" :key="index">
           <div>
-            <router-link to="/blog">{{ item }}</router-link>
+            <router-link to="/blog">{{ item.title }}</router-link>
           </div>
-          <img loading="lazy" src="./images/dis1.webp" />
+          <div>
+            <img  :src="'https://www.hartmore.xyz/admin/'+item.picture" @click="blogs(item.id)"/>
+          </div>
         </li>
       </ul>
     </div>
@@ -24,8 +26,15 @@ export default {
       recommend: [],
     };
   },
-  method: {
-   
+  methods:{
+    blogs(item) {
+      this.$router.push({
+        path: "/blog",
+        query: {
+          id: this.$base64.encode(item),
+        },
+      });
+    },
   },
   mounted() {
     this.$axios({
@@ -33,10 +42,8 @@ export default {
       method: "get",
       params: {},
     }).then((response) => {
-      this.newDataTitle = response.data.split(",");
-      console.log(this.newDataTitle);
-      
-      
+      this.newDataTitle = response.data;
+      // console.log(this.newDataTitle);
     });
   },
 };
@@ -60,7 +67,7 @@ export default {
   border-radius: 0.45rem;
 }
 .new {
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 1200px;
 }
 .new ul {
@@ -72,18 +79,32 @@ export default {
 }
 .new ul li {
   position: relative;
-  border-radius: 0.4rem;
   overflow: hidden;
-  height: 10rem;
+}
+
+.new ul li a{
+  color: black;
+  font-size: .9rem;
 }
 .new ul li:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   transition: 0.1s;
 }
-.new ul li img {
+.new ul li div:first-child{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.new ul li div:last-child{
   object-fit: cover;
   width: 16rem;
+  height: 9rem;
+}
+.new ul li div img{
+  object-fit: cover;
+  cursor: pointer;
+  width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 /* js添加最新推荐 小li群border效果 */
 .br {
