@@ -53,9 +53,15 @@
         <button @click="goSearch">搜索</button>
       </div>
       <div class="login">
-        <router-link to="/register">注册</router-link>
-        <span>/</span>
-        <router-link to="/register">登录</router-link>
+        <div v-show="show">
+          <router-link to="/register">注册</router-link>
+          <span>/</span>
+          <router-link to="/register">登录</router-link>
+        </div>
+        <div v-show="show2">
+          {{ username }}
+          <span @click="unLogin"> 退出登录</span>
+        </div>
       </div>
     </div>
   </div>
@@ -63,36 +69,32 @@
 </template>
 
 <script>
-
-
 export default {
   name: "userHeader",
   data() {
     return {
       keyword: "",
       isShow: false,
+      show: true,
+      show2: false,
       message: "点击展开菜单",
-      
+      username: "",
     };
   },
   methods: {
+    // 退出登陆
+    unLogin: function () {
+      sessionStorage.removeItem("token");
+      setTimeout(function () {
+        window.location.reload();
+      }, 100);
+    },
     goSearch() {
       this.$router.push({
         name: "search",
         params: { keyword: this.keyword },
         query: { k: this.keyword.toUpperCase() },
       });
-      // if(this.keywords !== ''){
-      //   let val = this.keywords.trim()
-      //   if(!val){
-      //     return
-      //   }
-      //   if(this.search.indexOf(val) === -1){
-      //     this.search.unshift(val)
-      //     this.search = this.search.slice(0,10)
-      //     localStorage.setItem('history',JSON.stringify(this.search))
-      //   }
-      // }
     },
     click() {
       this.isShow = !this.isShow;
@@ -102,9 +104,18 @@ export default {
         this.message = "点击展开菜单";
       }
     },
-    blur(){
-      this.$refs.sea.value = ''
+    blur() {
+      this.$refs.sea.value = "";
     },
+  },
+  created() {
+    this.username = JSON.parse(sessionStorage.getItem("token"));
+  },
+  mounted() {
+    if (this.username) {
+      this.show = !this.show;
+      this.show2 = !this.show2;
+    }
   },
 };
 </script>
@@ -228,42 +239,48 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-
   animation: block 0.6s ease-in-out;
 }
 .search input {
-  width: 20rem;
+  width: 18rem;
   height: 2rem;
   border: 0;
   border-radius: 10px;
   outline: none;
   font-size: 1rem;
   color: teal;
-  text-indent: 1rem;
+  text-indent: 8px;
 }
 .search button {
   cursor: pointer;
   position: absolute;
   border-radius: 5px;
-  width: 50px;
+  width: 42px;
   height: 2rem;
   outline: none;
   border: 0;
   background: #49cc7d;
   top: 0;
   right: 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 .login {
-  width: 12rem;
+  width: 14rem;
   font-size: 1.5rem;
   animation: block 0.7s ease-in-out;
 }
-.login a {
+.login div {
+  font-size: 1rem;
   color: white;
 }
-.login span {
+.login div a {
+  font-size: 1.3rem;
+  color: white;
+}
+.login div span {
+  cursor: pointer;
+  margin-left: 7px;
   color: white;
 }
 

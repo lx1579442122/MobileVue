@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3622147 */
-  src: url('https://at.alicdn.com/t/c/font_3622147_92adkmp11i.woff2?t=1668498493933') format('woff2'),
-       url('https://at.alicdn.com/t/c/font_3622147_92adkmp11i.woff?t=1668498493933') format('woff'),
-       url('https://at.alicdn.com/t/c/font_3622147_92adkmp11i.ttf?t=1668498493933') format('truetype');
+  src: url('iconfont.woff2?t=1668498449349') format('woff2'),
+       url('iconfont.woff?t=1668498449349') format('woff'),
+       url('iconfont.ttf?t=1668498449349') format('truetype');
 }
 
 .iconfont {
@@ -240,3 +240,4 @@
 .icon-pinglun3:before {
   content: "\e671";
 }
+

@@ -41,7 +41,7 @@
             <div class="fl">
               <div class="like">
                 <i class="iconfont icon-dianzan"></i>
-                <a>点赞</a>
+                <a @click="good(item.id)" ref="good">点赞</a>
               </div>
               <div class="like">
                 <i class="iconfont icon-a-xingxingkong"></i>
@@ -71,7 +71,7 @@
             <img src="@/assets/images/2.webp" alt="" />
             <div class="xia">
               <span>心悦</span>
-              <span>好久不见</span>
+              <span>站长</span>
             </div>
             <div class="setting">
               <div><span>文章数量</span><span>63</span></div>
@@ -92,6 +92,20 @@
         </div>
         <div class="user">
           <div class="tp">
+            <img src="@/assets/images/97.webp" alt="" />
+          </div>
+          <div class="user-con">
+            <div class="xia">
+              <span>欢迎客官</span>
+              <span></span>
+            </div>
+            <span
+              >{{username}}</span
+            >
+          </div>
+        </div>
+        <div class="user">
+          <div class="tp">
             <img src="@/assets/images/ni.webp" alt="" />
           </div>
           <div class="user-con">
@@ -104,6 +118,7 @@
             >
           </div>
         </div>
+       
         <div class="user">
           <div class="tp">
             <img src="@/assets/images/9.jpg" alt="" />
@@ -146,15 +161,7 @@
             <span style="display: block; text-align: center; font-size: 20px"
               >星星之火,可以燎原</span
             >
-            <span
-              style="
-                margin-top: 5px;
-                display: block;
-                text-align: center;
-                font-size: 14px;
-              "
-              >祝大家在各自的领域里熠熠生辉</span
-            >
+            <span>祝大家在各自的领域里熠熠生辉</span>
           </div>
         </div>
       </div>
@@ -172,6 +179,8 @@ export default {
       show: 5,
       index: 0,
       newData: [],
+      new: "",
+      userinfo:[]
     };
   },
   methods: {
@@ -197,6 +206,26 @@ export default {
         },
       });
     },
+    good: function (g) {
+      this.$axios({
+        url: "https://www.hartmore.xyz/php/vueGood.php",
+        method: "get",
+        params: {
+          id: g,
+          good: true,
+        },
+      }).then((response) => {
+        this.new = response.data;
+        this.newData[4] = this.new;
+      });
+    },
+  },
+  watch: {
+    new(val) {
+      this.$nextTick(() => {
+        this.new = val;
+      });
+    },
   },
   mounted() {
     this.$axios({
@@ -206,6 +235,17 @@ export default {
     }).then((response) => {
       this.newData = response.data;
     });
+    this.$axios({
+      url: "https://www.hartmore.xyz/php/userinfo.php",
+      method: "POST",
+      params: {},
+    }).then((response) => {
+      this.userinfo = response.data;
+      console.log(this.userinfo);
+    });
+  },
+  created() {
+    this.username = JSON.parse(sessionStorage.getItem("token"));
   },
 };
 </script>
@@ -282,6 +322,7 @@ a {
   border-radius: 100%;
 }
 .user-con > span {
+  text-align: center;
   letter-spacing: 1px;
   padding: 0 20px;
   display: block;
@@ -338,7 +379,7 @@ a {
   display: grid;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 10px;
   width: 90px;
 }
 .blog-item {
@@ -374,7 +415,7 @@ a {
 .rt {
   width: 40%;
 }
-.rt > div:first-child{
+.rt > div:first-child {
   width: 310px;
   height: 150px;
 }
@@ -386,7 +427,6 @@ a {
   height: 100%;
 }
 .blog-item .rt > div:first-child:hover {
-  
   transform: scale(1.05);
   transition: 0.1s;
 }

@@ -1,118 +1,130 @@
 <template>
   <div class="w">
+    <user-poppup
+      :success="success"
+      :timer="this.time"
+      :msg="msg"
+      v-show="show"
+    ></user-poppup>
     <div class="container">
-      <form
-        action="https://www.hartmore.xyz/php/iphoneRegister.php"
-        method="POST"
-      >
-        <div class="login-box" v-show="isShow">
-          <div class="title">XINYUE</div>
-          <div class="input">
-            <label for="username">邮箱</label>
-            <input
-              type="text"
-              name="username"
-              id="login-user"
-              :placeholder="placeholder1"
-              @focus="placeholderF"
-              @blur="placeholderB"
-            />
-          </div>
-          <div class="input">
-            <label for="userpasswer">密码</label>
-            <input
-              ref="show"
-              type="password"
-              name="password"
-              id="psw"
-              :placeholder="placeholder2"
-              @focus="placeholderF2"
-              @blur="placeholderB2"
-            />
-            <div class="show" @click="pass">
-              <img v-show="closeShow" src="@/assets/images/close.webp" />
-              <img v-show="openShow" src="@/assets/images/open.webp" />
-            </div>
-          </div>
-          <div class="btn">
-            <button type="submit">登录</button>
-          </div>
-          <div class="change-box">
-            <div class="toSign" @click="isShow = !isShow">
-              <span>去注册</span>
-            </div>
+      <div class="login-box" v-show="isShow">
+        <div class="title">XINYUE</div>
+        <div class="input">
+          <label for="username">邮箱</label>
+          <input
+            type="text"
+            name="username"
+            id="login-user"
+            :placeholder="placeholder1"
+            @focus="placeholderF"
+            @blur="placeholderB"
+            v-model="rgusername"
+          />
+        </div>
+        <div class="input">
+          <label for="userpasswer">密码</label>
+          <input
+            ref="show"
+            type="password"
+            name="password"
+            id="psw"
+            :placeholder="placeholder2"
+            @focus="placeholderF2"
+            @blur="placeholderB2"
+            v-model="rgpassword"
+          />
+          <div class="show" @click="pass">
+            <img v-show="closeShow" src="@/assets/images/close.webp" />
+            <img v-show="openShow" src="@/assets/images/open.webp" />
           </div>
         </div>
-      </form>
-      <form action="https://www.hartmore.xyz/php/iphoneLogin.php" method="POST">
-        <div class="sign-box" v-show="!isShow">
-          <div class="title">XINYUE</div>
-          <div class="input">
-            <label for="username">邮箱</label>
-            <input
-              type="text"
-              name="username"
-              id="sign-user"
-              class="username pos"
-              :placeholder="placeholder3"
-              @focus="placeholderF3"
-              @blur="placeholderB3"
-            />
-          </div>
-          <div class="input">
-            <label for="userpasswer">密码</label>
-            <input
-              ref="show1"
-              type="password"
-              name="password"
-              class="pass"
-              id="pswt"
-              :placeholder="placeholder4"
-              @focus="placeholderF4"
-              @blur="placeholderB4"
-            />
-            <div class="show" @click="pass1">
-              <img v-show="closeShow" src="@/assets/images/close.webp" />
-              <img v-show="openShow" src="@/assets/images/open.webp" />
-            </div>
-            <!-- <img src="@/assets/images/close.webp" alt="" id="eyetwo" />
-            <img src="@/assets/images/open.webp"/> -->
-          </div>
-          <div class="input">
-            <label for="userpasswer">确认密码</label>
-            <input
-              ref="show2"
-              type="password"
-              class="repass"
-              id="pswte"
-              :placeholder="placeholder5"
-              @focus="placeholderF5"
-              @blur="placeholderB5"
-            />
-            <div class="show" @click="pass2">
-              <img v-show="closeShow1" src="@/assets/images/close.webp" />
-              <img v-show="openShow1" src="@/assets/images/open.webp" />
-            </div>
-            <!-- <img src="@/assets/images/close.webp" alt="" id="eyetwo" />
-            <img src="@/assets/images/open.webp"/> -->
-          </div>
-          <div class="btn">
-            <button type="submit">注册</button>
-          </div>
-          <div class="change-box">
-            <div class="toLogin" @click="isShow = !isShow">
-              <span>去登录</span>
-            </div>
+        <div class="btn">
+          <button type="submit" @click="registerSubmit">登录</button>
+        </div>
+        <div class="change-box">
+          <div class="toSign" @click="isShow = !isShow">
+            <span>去注册</span>
           </div>
         </div>
-      </form>
+      </div>
+      <div class="sign-box" v-show="!isShow">
+        <div class="passw">
+          <span ref="ruo" v-show="ruo">弱</span>
+          <span ref="zhong" v-show="zhong">中</span>
+          <span ref="qiang" v-show="qiang">强</span>
+        </div>
+        <div class="title">XINYUE</div>
+        <div class="input">
+          <label for="username">邮箱</label>
+          <input
+            type="text"
+            name="username"
+            id="sign-user"
+            class="username pos"
+            :placeholder="placeholder3"
+            @focus="placeholderF3"
+            @blur="placeholderB3"
+            v-model="lgusername"
+          />
+        </div>
+        <div class="input">
+          <label for="userpasswer">密码</label>
+          <input
+            ref="show1"
+            type="password"
+            name="password"
+            class="pass"
+            id="pswt"
+            :placeholder="placeholder4"
+            @focus="placeholderF4"
+            @blur="placeholderB4"
+          />
+          <div class="show" @click="pass1">
+            <img v-show="closeShow" src="@/assets/images/close.webp" />
+            <img v-show="openShow" src="@/assets/images/open.webp" />
+          </div>
+          <!-- <img src="@/assets/images/close.webp" alt="" id="eyetwo" />
+            <img src="@/assets/images/open.webp"/> -->
+        </div>
+        <div class="input">
+          <label for="userpasswer">确认密码</label>
+          <input
+            ref="show2"
+            type="password"
+            class="repass"
+            id="pswte"
+            :placeholder="placeholder5"
+            @focus="placeholderF5"
+            @blur="placeholderB5"
+            v-model="lgpassword"
+          />
+          <div class="show" @click="pass2">
+            <img v-show="closeShow1" src="@/assets/images/close.webp" />
+            <img v-show="openShow1" src="@/assets/images/open.webp" />
+          </div>
+          <!-- <img src="@/assets/images/close.webp" alt="" id="eyetwo" />
+            <img src="@/assets/images/open.webp"/> -->
+        </div>
+        <div class="btn">
+          <button type="submit" @click="loginSubmit">注册</button>
+        </div>
+        <div class="change-box">
+          <div class="toLogin" @click="isShow = !isShow">
+            <span>去登录</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import userPoppup from "@/components/Poppup";
 export default {
   name: "userRegister",
+  components: {
+    userPoppup,
+  },
   data() {
     return {
       isShow: true,
@@ -125,6 +137,19 @@ export default {
       placeholder3: "请输入邮箱",
       placeholder4: "请输入密码",
       placeholder5: "请再次确认密码",
+      rgusername: "",
+      rgpassword: "",
+      lgusername: "",
+      lgpassword: "",
+      newData: [],
+      success: "",
+      time: 0,
+      show: false,
+      msg: "",
+      new: "",
+      ruo: false,
+      zhong: false,
+      qiang: false,
     };
   },
   methods: {
@@ -195,6 +220,149 @@ export default {
         this.$refs.show2.type = "password";
       }
     },
+    loginSubmit() {
+      this.$axios({
+        url: "https://www.hartmore.xyz/php/iphoneLogin.php",
+        method: "get",
+        params: {
+          username: this.lgusername,
+          password: this.lgpassword,
+        },
+      }).then((response) => {
+        this.new = response.data;
+        if (this.new == "注册失败") {
+          this.msg = "注册失败！";
+          this.show = true;
+          this.time = 1;
+          setInterval(this.countDown, 1000);
+          setTimeout(() => {
+            this.$router.go(0);
+          }, 1000);
+        }
+        if (this.new == "注册成功") {
+          this.show = true;
+          // 登录成功效果书写
+          this.msg = "注册成功！";
+          this.success = this.newData;
+          this.time = 5;
+          setInterval(this.countDown, 1000);
+          setTimeout(() => {
+            this.$router.go(0);
+          }, 5000);
+        }
+        console.log(this.new);
+      });
+    },
+    registerSubmit() {
+      this.$axios({
+        url: "https://www.hartmore.xyz/php/iphoneRegister.php",
+        method: "get",
+        params: {
+          username: this.rgusername,
+          password: this.rgpassword,
+        },
+      }).then((response) => {
+        this.newData = response.data;
+        if (this.newData == 0) {
+          this.msg = "登陆失败！";
+          this.show = true;
+          this.time = 1;
+          setInterval(this.countDown, 1000);
+          setTimeout(() => {
+            this.$router.go(0);
+          }, 1000);
+        } else {
+          if (this.rgusername !== "" && this.rgpassword !== "") {
+            this.show = true;
+            window.sessionStorage.setItem("token", this.newData);
+            // 登录成功效果书写
+            this.msg = "登陆成功！欢迎你！";
+            this.success = this.newData;
+            this.time = 3;
+            setInterval(this.countDown, 1000);
+            setTimeout(() => {
+              this.$router.push({ path: "/home" });
+              setTimeout(function () {
+                window.location.reload();
+              }, 100);
+            }, 3000);
+          }
+        }
+      });
+    },
+    countDown: function () {
+      this.time--;
+    },
+  },
+  watch: {
+    lgpassword: {
+      handler: function (newVal) {
+        // 是数字
+        // let isDigit = /^.*[0-9]+.*/;
+        // isLowerCase 小写字母
+        // let isLowerCase = /^.*[a-z]+.*/;
+        // isUpperCase 大写字母
+        // let isUpperCase = /^.*[A-Z]+.*/;
+        // 特殊字符
+        // let regEx = /^.*[^a-zA-Z0-9]+.*/;
+        if (newVal == "") {
+           this.show = true
+           this.msg = "不能为空！";
+        }else{
+          this.show = true
+          this.msg = "";
+        }
+      },
+    },
+    lgusername: {
+      handler: function (newVal) {
+        if (newVal == "") {
+           this.show = true
+           this.msg = "不能为空！";
+        }else{
+          this.show = true
+          this.msg = "";
+        }
+      },
+    },
+    rgusername: {
+      handler: function (newVal) {
+        if (newVal == "") {
+           this.show = true
+           this.msg = "不能为空！";
+        }else{
+          this.show = true
+          this.msg = "";
+        }
+      },
+    },
+    rgpassword: {
+      handler: function (newVal) {
+        if (newVal == "") {
+           this.show = true
+           this.msg = "不能为空！";
+        }else{
+          this.show = true
+          this.msg = "";
+        }
+      },
+    },
+  },
+  // watch: {
+  //   time: function (newVal) {
+  //     if (newVal === 0) {
+  //       this.$router.push({ path: "/home" });
+  //     }
+  //   },
+  // },
+  // beforeDestroy() {
+  //   clearInterval(this.timer);
+  // },
+  mounted() {
+    this.show = true
+    this.msg = "不能为空！";
+    this.time = ""
+
   },
 };
 </script>
@@ -229,6 +397,7 @@ $bold: 700 !default;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .title {
         text-align: center;
         font-size: 2rem;
@@ -308,6 +477,30 @@ $bold: 700 !default;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      .passw {
+        width: 100%;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.6rem;
+        span {
+          border-radius: 5px;
+          text-align: center;
+          display: block;
+          width: 100px;
+          margin: 0 3px;
+        }
+        span:first-child {
+          background-color: rgb(251, 0, 0);
+        }
+        span:nth-child(2) {
+          background-color: rgb(2, 145, 254);
+        }
+        span:last-child {
+          background-color: rgb(0, 240, 56);
+        }
+      }
       .title {
         text-align: center;
         font-size: 2rem;

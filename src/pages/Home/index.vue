@@ -20,6 +20,9 @@ export default {
     homeBlog,
     homeList
   },
+  mounted() {
+    
+  }
 };
 </script>
 
